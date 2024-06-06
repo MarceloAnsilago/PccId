@@ -8,7 +8,13 @@ import locale
 import roman
 import uuid
 # Configurando a localização para o Brasil
-locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+import locale
+
+try:
+    locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+except locale.Error:
+    locale.setlocale(locale.LC_ALL, '')
+
 # Configura a página para o modo wide
 st.set_page_config(layout="wide")
 
